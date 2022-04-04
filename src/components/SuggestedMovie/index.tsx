@@ -1,15 +1,16 @@
 import { Container, IFlatList, ILoading, IText } from "@components/general";
+import { Genre, Movie } from "@models";
 import { GenreItem, MovieItem } from "@components/items";
 import React, { useEffect, useReducer } from "react";
 import { getGenres, getMovies } from "src/api/movie";
 import { suggestedMovieInitialState, suggestedMovieReducer } from "./context";
 
-import { Genre } from "@models";
 import { colors } from "@constants";
 import { useI18Next } from "src/i18";
 import { useTailwind } from "tailwind-rn/dist";
 
-const SuggestedMovie = () => {
+type Props = { onPressMovie: (movie: Movie) => void };
+const SuggestedMovie = ({ onPressMovie }: Props) => {
   const tailwind = useTailwind();
   const { t } = useI18Next();
 
@@ -72,7 +73,9 @@ const SuggestedMovie = () => {
       ) : (
         <IFlatList
           data={state.movies}
-          renderItem={({ item }) => <MovieItem movie={item} />}
+          renderItem={({ item }) => (
+            <MovieItem onPress={(movie) => onPressMovie(movie)} movie={item} />
+          )}
         />
       )}
     </Container>

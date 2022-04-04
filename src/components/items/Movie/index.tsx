@@ -1,5 +1,4 @@
-import { Container, IImage, IText } from "@components/general";
-import { Text, View } from "react-native";
+import { Container, IImage, IText, ITouchable } from "@components/general";
 
 import { Movie } from "@models";
 import RatingBar from "@components/RatingBar";
@@ -8,12 +7,18 @@ import { useTailwind } from "tailwind-rn/dist";
 
 interface Props {
   movie: Movie;
+  onPress: (movie: Movie) => void;
 }
 
-const MovieItem = ({ movie }: Props) => {
+const MovieItem = ({ movie, onPress }: Props) => {
   const tailwind = useTailwind();
+
+  const handlePress = () => {
+    onPress(movie);
+  };
+
   return (
-    <Container style={tailwind("my-2")}>
+    <ITouchable onPress={handlePress} style={tailwind("my-2")}>
       <Container style={tailwind("flex-row")}>
         <IImage
           source={{ uri: movie.image }}
@@ -38,7 +43,7 @@ const MovieItem = ({ movie }: Props) => {
           </IText>
         </Container>
       </Container>
-    </Container>
+    </ITouchable>
   );
 };
 

@@ -31,6 +31,16 @@
   margin-right: 1rem
 }
 
+.my-3 {
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem
+}
+
+.my-1 {
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem
+}
+
 .ml-2 {
   margin-left: 0.5rem
 }
@@ -53,6 +63,14 @@
 
 .h-28 {
   height: 7rem
+}
+
+.h-52 {
+  height: 13rem
+}
+
+.h-64 {
+  height: 16rem
 }
 
 .w-full {
@@ -145,6 +163,11 @@
   background-color: rgb(20 83 45 / var(--tw-bg-opacity))
 }
 
+.bg-rose-400 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(251 113 133 / var(--tw-bg-opacity))
+}
+
 .bg-opacity-50 {
   --tw-bg-opacity: 0.5
 }
@@ -185,6 +208,11 @@
 .py-2 {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem
+}
+
+.px-2 {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem
 }
 
 .pt-4 {

@@ -16,19 +16,19 @@ const routes: {
   {
     name: pageNames.home.landing,
     component: Landing,
-    icon: <HomeIcon color="white" size={25} />,
+    icon: <HomeIcon color="white" size={22} />,
     label: "home",
   },
   {
     name: pageNames.home.favorite,
     component: Favorite,
-    icon: <FavoriteIcon color="white" size={25} />,
+    icon: <FavoriteIcon color="white" size={22} />,
     label: "favorite",
   },
   {
     name: pageNames.home.profile,
     component: Profile,
-    icon: <ProfileIcon color="white" size={25} />,
+    icon: <ProfileIcon color="white" size={22} />,
     label: "profile",
   },
 ];

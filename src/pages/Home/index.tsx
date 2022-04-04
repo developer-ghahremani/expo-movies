@@ -30,7 +30,7 @@ const Home = () => {
                     }`
                   )}>
                   {route.icon}
-                  {/* <AntDesign name="home" color="white" size={25} /> */}
+
                   {focused && (
                     <IText style={tailwind("ml-2")}>
                       {t(`general.${route.label}`)}
