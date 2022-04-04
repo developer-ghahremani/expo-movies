@@ -1,10 +1,11 @@
-import { Container, IFlatList, IText } from "@components/general";
+import { Container, IFlatList, ILoading, IText } from "@components/general";
+import { GenreItem, MovieItem } from "@components/items";
 import React, { useEffect, useReducer } from "react";
+import { getGenres, getMovies } from "src/api/movie";
 import { suggestedMovieInitialState, suggestedMovieReducer } from "./context";
 
 import { Genre } from "@models";
-import { GenreItem } from "@components/items";
-import { getGenres } from "src/api/movie";
+import { colors } from "@constants";
 import { useI18Next } from "src/i18";
 import { useTailwind } from "tailwind-rn/dist";
 
@@ -16,6 +17,20 @@ const SuggestedMovie = () => {
     suggestedMovieReducer,
     suggestedMovieInitialState
   );
+
+  useEffect(() => {
+    if (state.selectedGenre?.uuid) loadMovies();
+  }, [state.selectedGenre]);
+
+  const loadMovies = async () => {
+    dispatch({ type: "showLoadingMovies" });
+    try {
+      const { data } = await getMovies({ genres: state.selectedGenre?.uuid });
+      dispatch({ type: "setMovies", payload: data.results });
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   useEffect(() => {
     loadGenres();
@@ -39,6 +54,7 @@ const SuggestedMovie = () => {
       <IText style={tailwind("text-lg font-nunito-bold")}>
         {t("general.suggestedForYou")}
       </IText>
+      {state.loadingGenre && <ILoading color={colors.red} />}
       <IFlatList
         horizontal
         data={state.genres}
@@ -51,6 +67,14 @@ const SuggestedMovie = () => {
           />
         )}
       />
+      {state.loadingMovies ? (
+        <ILoading color={colors.red} />
+      ) : (
+        <IFlatList
+          data={state.movies}
+          renderItem={({ item }) => <MovieItem movie={item} />}
+        />
+      )}
     </Container>
   );
 };

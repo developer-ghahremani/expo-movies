@@ -21,6 +21,16 @@
   margin-right: 0.25rem
 }
 
+.my-2 {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem
+}
+
+.mx-4 {
+  margin-left: 1rem;
+  margin-right: 1rem
+}
+
 .ml-2 {
   margin-left: 0.5rem
 }
@@ -37,12 +47,28 @@
   height: 75
 }
 
+.h-20 {
+  height: 5rem
+}
+
+.h-28 {
+  height: 7rem
+}
+
 .w-full {
   width: 100%
 }
 
 .w-40 {
   width: 10rem
+}
+
+.w-16 {
+  width: 4rem
+}
+
+.w-24 {
+  width: 6rem
 }
 
 .flex-1 {
@@ -114,6 +140,11 @@
   background-color: rgb(209 213 219 / var(--tw-bg-opacity))
 }
 
+.bg-green-900 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(20 83 45 / var(--tw-bg-opacity))
+}
+
 .bg-opacity-50 {
   --tw-bg-opacity: 0.5
 }
@@ -182,6 +213,11 @@
   line-height: 1.5rem
 }
 
+.text-sm {
+  font-size: 0.875rem;
+  line-height: 1.25rem
+}
+
 .text-red {
   --tw-text-opacity: 1;
   color: rgb(226 25 56 / var(--tw-text-opacity))
@@ -190,4 +226,14 @@
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity))
+}
+
+.text-gray-600 {
+  --tw-text-opacity: 1;
+  color: rgb(75 85 99 / var(--tw-text-opacity))
+}
+
+.text-gray-500 {
+  --tw-text-opacity: 1;
+  color: rgb(107 114 128 / var(--tw-text-opacity))
 }
