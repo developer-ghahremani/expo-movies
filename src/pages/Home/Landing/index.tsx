@@ -3,6 +3,7 @@ import { Container, IText } from "@components/general";
 import { ISearch } from "@components/icons";
 import { MainLayout } from "@components/layout";
 import React from "react";
+import { SuggestedMovie } from "@components";
 import { useI18Next } from "src/i18";
 import { useTailwind } from "tailwind-rn/dist";
 
@@ -18,9 +19,7 @@ const Landing = () => {
           </IText>
           <ISearch color="white" size={20} />
         </Container>
-        <IText style={tailwind("text-lg font-nunito-bold")}>
-          {t("general.suggestedForYou")}
-        </IText>
+        <SuggestedMovie />
       </Container>
     </MainLayout>
   );

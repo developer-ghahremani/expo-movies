@@ -8,8 +8,9 @@
       "@assets/*": ["./assets/*"],
       "@pages/*": ["./src/pages/*"],
       "@utils/*": ["./src/utils/*"],
-      "@models/*": ["./src/models/*"],
-      "@constants": ["./src/constants"]
+      "@constants": ["./src/constants"],
+      "@components": ["./src/components"],
+      "@models": ["./src/models"]
     }
   }
 }
