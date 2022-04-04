@@ -13,7 +13,7 @@ const Home = () => {
     <Stack.Navigator
       screenOptions={{
         headerShown: false,
-        tabBarStyle: tailwind("rounded-t-3xl bg-red h-[65]"),
+        tabBarStyle: tailwind("rounded-t-3xl bg-red h-[65] absolute"),
       }}>
       {routes.map((route) => (
         <Stack.Screen
@@ -21,9 +21,10 @@ const Home = () => {
             tabBarShowLabel: false,
             tabBarIcon: ({ focused }) => (
               <View
-                style={
-                  focused ? tailwind("w-full bg-gray-400") : tailwind("bg-red")
-                }>
+                style={[
+                  tailwind("justify-center"),
+                  focused ? tailwind("w-full bg-gray-400") : tailwind("bg-red"),
+                ]}>
                 <AntDesign name="home" size={25} />
                 {focused && <Text>home</Text>}
               </View>

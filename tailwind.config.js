@@ -6,6 +6,12 @@ module.exports = {
         red: "#e21938",
         dark: "#0c0c0c",
       },
+      fontFamily: {
+        "nunito-regular": "nunito-regular",
+        "nunito-medium": "nunito-medium",
+        "nunito-bold": "nunito-bold",
+        "nunito-extra-bold": "nunito-extra-bold",
+      },
     },
   },
   plugins: [],

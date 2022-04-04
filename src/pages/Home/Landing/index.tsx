@@ -1,19 +1,29 @@
-import { StyleSheet, Text, View } from "react-native";
+import { Container, IText } from "@components/general";
 
+import { ISearch } from "@components/icons";
+import { MainLayout } from "@components/layout";
 import React from "react";
+import { useI18Next } from "src/i18";
 import { useTailwind } from "tailwind-rn/dist";
 
-type Props = {};
-
-const Landing = (props: Props) => {
+const Landing = () => {
   const tailwind = useTailwind();
+  const { t } = useI18Next();
   return (
-    <View>
-      <Text style={tailwind("rounded-t-lg bg-red")}>Landing</Text>
-    </View>
+    <MainLayout>
+      <Container style={tailwind("px-4 pt-4")}>
+        <Container style={tailwind("flex-row justify-between items-center")}>
+          <IText style={tailwind("text-lg font-nunito-bold")}>
+            {t("general.topPicksBy")}
+          </IText>
+          <ISearch color="white" size={20} />
+        </Container>
+        <IText style={tailwind("text-lg font-nunito-bold")}>
+          {t("general.suggestedForYou")}
+        </IText>
+      </Container>
+    </MainLayout>
   );
 };
 
 export default Landing;
-
-const styles = StyleSheet.create({});

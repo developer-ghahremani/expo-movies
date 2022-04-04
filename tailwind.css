@@ -1,3 +1,11 @@
+.absolute {
+  position: absolute
+}
+
+.relative {
+  position: relative
+}
+
 .h-\[65\] {
   height: 65
 }
@@ -10,14 +18,25 @@
   flex: 1 1 0%
 }
 
+.flex-row {
+  flex-direction: row
+}
+
+.items-center {
+  align-items: center
+}
+
+.justify-center {
+  justify-content: center
+}
+
+.justify-between {
+  justify-content: space-between
+}
+
 .rounded-t-3xl {
   border-top-left-radius: 1.5rem;
   border-top-right-radius: 1.5rem
-}
-
-.rounded-t-lg {
-  border-top-left-radius: 0.5rem;
-  border-top-right-radius: 0.5rem
 }
 
 .bg-red {
@@ -25,9 +44,9 @@
   background-color: rgb(226 25 56 / var(--tw-bg-opacity))
 }
 
-.bg-blue-400 {
+.bg-gray-400 {
   --tw-bg-opacity: 1;
-  background-color: rgb(96 165 250 / var(--tw-bg-opacity))
+  background-color: rgb(156 163 175 / var(--tw-bg-opacity))
 }
 
 .bg-dark {
@@ -35,12 +54,39 @@
   background-color: rgb(12 12 12 / var(--tw-bg-opacity))
 }
 
-.bg-gray-400 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(156 163 175 / var(--tw-bg-opacity))
+.px-4 {
+  padding-left: 1rem;
+  padding-right: 1rem
+}
+
+.pt-4 {
+  padding-top: 1rem
+}
+
+.font-nunito-medium {
+  font-family: nunito-medium
+}
+
+.font-nunito-bold {
+  font-family: nunito-bold
+}
+
+.text-lg {
+  font-size: 1.125rem;
+  line-height: 1.75rem
+}
+
+.text-base {
+  font-size: 1rem;
+  line-height: 1.5rem
 }
 
 .text-red {
   --tw-text-opacity: 1;
   color: rgb(226 25 56 / var(--tw-text-opacity))
+}
+
+.text-white {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity))
 }
