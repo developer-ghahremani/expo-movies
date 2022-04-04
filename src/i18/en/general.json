@@ -1,5 +1,8 @@
 {
   "hi": "HIIII",
   "topPicksBy": "Top picks by your social network",
-  "suggestedForYou": "Suggested for you"
+  "suggestedForYou": "Suggested for you",
+  "home": "Home",
+  "profile": "Profile",
+  "favorite": "Favorite"
 }

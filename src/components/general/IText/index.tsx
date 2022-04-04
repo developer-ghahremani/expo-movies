@@ -12,7 +12,7 @@ const IText = ({ children, bold, style, ...prp }: Props) => {
   return (
     <Text
       style={[
-        tailwind("text-white"),
+        tailwind("text-white text-base"),
         tailwind(bold ? "font-nunito-bold" : "font-nunito-medium"),
         style,
       ]}
