@@ -6,5 +6,7 @@ const pageNames = {
     favorite: "/home/favorite",
     profile: "/home/profile",
   },
+  movies: "/movies",
+  movieDetails: "/movieDetails",
 };
 export default pageNames;

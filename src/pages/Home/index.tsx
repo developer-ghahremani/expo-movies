@@ -15,7 +15,7 @@ const Home = () => {
     <Stack.Navigator
       screenOptions={{
         headerShown: false,
-        tabBarStyle: tailwind("rounded-t-3xl bg-red h-[75] absolute"),
+        tabBarStyle: tailwind("rounded-t-3xl bg-red h-[65] absolute"),
       }}>
       {routes.map((route) => (
         <Stack.Screen

@@ -15,13 +15,20 @@ const RatingBar = ({ value, size }: Props) => {
     <Container style={tailwind("flex-row")}>
       {[0, 1, 2, 3, 4].map((item, index) =>
         index < value ? (
-          <StareIcon key={index} isSelected color="yellow" size={size} />
+          <StareIcon
+            style={tailwind(index === 0 ? "mx-0" : "mx-[2px]")}
+            key={index}
+            isSelected
+            color="#fb9d02"
+            size={size}
+          />
         ) : (
           <StareIcon
             key={index}
             isSelected={false}
-            color="yellow"
+            color="#fb9d02"
             size={size}
+            style={tailwind(index === 0 ? "mx-0" : "mx-[2px]")}
           />
         )
       )}
