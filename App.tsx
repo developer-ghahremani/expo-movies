@@ -7,7 +7,9 @@ import React, { useEffect, useState } from "react";
 import { LogBox } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import Pages from "@pages/index";
+import { Provider } from "react-redux";
 import { TailwindProvider } from "tailwind-rn";
+import store from "src/store";
 import utilities from "./tailwind.json";
 
 const App = () => {
@@ -30,11 +32,13 @@ const App = () => {
 
   if (!isFontloaded) return null;
   return (
-    <TailwindProvider utilities={utilities}>
-      <NavigationContainer>
-        <Pages />
-      </NavigationContainer>
-    </TailwindProvider>
+    <Provider store={store}>
+      <TailwindProvider utilities={utilities}>
+        <NavigationContainer>
+          <Pages />
+        </NavigationContainer>
+      </TailwindProvider>
+    </Provider>
   );
 };
 

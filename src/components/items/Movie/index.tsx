@@ -27,7 +27,9 @@ const MovieItem = ({ movie, onPress }: Props) => {
 
         <Container style={tailwind("flex-1 px-4 justify-center")}>
           <Container style={tailwind("flex-row items-center")}>
-            <IText style={tailwind("font-nunito-bold")}>{movie.title}</IText>
+            <IText style={tailwind("font-nunito-bold")}>
+              {movie.titleOriginal}
+            </IText>
             <IText
               style={tailwind(
                 "text-gray-500 mx-1 text-sm"

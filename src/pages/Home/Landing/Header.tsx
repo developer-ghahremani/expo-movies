@@ -14,6 +14,7 @@ const Header = ({ movie }: Props) => {
   const { navigate } = useNavigation();
   const tailwind = useTailwind();
   const { t } = useI18Next();
+
   const handleMovieDetail = () => {
     navigate(pageNames.movieDetails, { movieId: movie?._id });
   };

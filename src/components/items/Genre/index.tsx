@@ -8,18 +8,18 @@ import { useTailwind } from "tailwind-rn/dist";
 type Props = {
   genre: Genre;
   isSelected?: boolean;
-  onPress: (genre: Genre) => void;
+  onPress?: (genre: Genre) => void;
 };
 
 const GenreItem = ({ genre, isSelected, onPress }: Props) => {
   const tailwind = useTailwind();
 
   const handlePress = () => {
-    onPress(genre);
+    onPress && onPress(genre);
   };
 
   return (
-    <ITouchable onPress={handlePress}>
+    <ITouchable disabled={!onPress} onPress={handlePress}>
       <Container
         style={[
           tailwind("mx-2 rounded-lg items-center text-center py-2 px-4"),

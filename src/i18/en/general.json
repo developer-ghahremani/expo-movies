@@ -6,5 +6,9 @@
   "profile": "Profile",
   "favorite": "Favorite",
   "showMore": "Show more",
-  "viewDetails": "View details"
+  "viewDetails": "View details",
+  "description": "Description",
+  "show": "Show {{option}}",
+  "less": "Less",
+  "more": "More"
 }

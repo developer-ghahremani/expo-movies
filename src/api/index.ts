@@ -1,7 +1,8 @@
 import axios from "axios";
+import { baseURL } from "@constants";
 
 const api = axios.create({
-  baseURL: "https://movies-app1.p.rapidapi.com/api/",
+  baseURL,
 });
 
 api.interceptors.request.use((cnf) => {
