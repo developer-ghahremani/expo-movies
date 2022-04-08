@@ -1,14 +1,32 @@
+import { Container, IFlatList } from "@components/general";
 import { StyleSheet, Text, View } from "react-native";
 
+import { MainLayout } from "@components/layout";
+import { Movie } from "@models";
+import { MovieItem } from "@components/items";
 import React from "react";
+import { pageNames } from "@constants";
+import { useAppSelector } from "src/store";
+import { useNavigation } from "@react-navigation/native";
 
-type Props = {};
+const Favorite = () => {
+  const favorites = useAppSelector((s) => s.favorites);
+  const { navigate } = useNavigation();
+  const handleMovieDetail = (params: Movie) => {
+    navigate(pageNames.movieDetails, { movieId: params._id });
+  };
 
-const Favorite = (props: Props) => {
   return (
-    <View>
-      <Text>Favorite</Text>
-    </View>
+    <MainLayout>
+      <Container>
+        <IFlatList
+          data={favorites}
+          renderItem={({ item }) => (
+            <MovieItem onPress={handleMovieDetail} movie={item} />
+          )}
+        />
+      </Container>
+    </MainLayout>
   );
 };
 

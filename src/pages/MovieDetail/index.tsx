@@ -6,15 +6,19 @@ import {
   IText,
   ITouchable,
 } from "@components/general";
+import { Dimensions, StyleSheet } from "react-native";
 import React, { useState } from "react";
+import { useAppDispatch, useAppSelector } from "src/store";
 import { useNavigation, useRoute } from "@react-navigation/native";
 
-import { Dimensions } from "react-native";
+import { FavoriteIcon } from "@components/icons";
 import { GenreItem } from "@components/items";
 import IBack from "@components/icons/IBack";
+import { LinearGradient } from "expo-linear-gradient";
 import { MainLayout } from "@components/layout";
 import RatingBar from "@components/RatingBar";
 import { colors } from "@constants";
+import { toggleFavorite } from "src/store/favorites";
 import { useGetMovieDetailQuery } from "src/store/service";
 import { useI18Next } from "src/i18";
 import { useTailwind } from "tailwind-rn/dist";
@@ -26,6 +30,8 @@ const MovieDetails = () => {
   const tailwind = useTailwind();
   const { goBack } = useNavigation();
   const { t } = useI18Next();
+  const dispatch = useAppDispatch();
+  const favorites = useAppSelector((s) => s.favorites);
 
   const { data, isFetching, isSuccess, isError, error } =
     useGetMovieDetailQuery({
@@ -34,6 +40,10 @@ const MovieDetails = () => {
 
   const toggleDescription = () => {
     setShowMoreDesc((s) => !s);
+  };
+
+  const handleToggleFavorite = () => {
+    dispatch(toggleFavorite(data?.result));
   };
 
   if (isFetching)
@@ -53,16 +63,45 @@ const MovieDetails = () => {
             <IBack color="white" size={24} />
           </ITouchable>
         </Container>
-        <IImage
-          source={{ uri: data?.result.image }}
+
+        <Container
           style={{
-            width: "100%",
-            height: Dimensions.get("window").height / 3,
+            ...styles.imageContianer,
+            position: "relative",
             marginTop: 5,
-            borderRadius: 10,
-          }}
-          resizeMode="cover"
-        />
+          }}>
+          <IImage
+            source={{ uri: data?.result.image }}
+            style={styles.imageContianer}
+            resizeMode="cover"
+          />
+
+          <LinearGradient
+            colors={["#00000010", colors.dark]}
+            style={{
+              ...styles.imageContianer,
+              position: "absolute",
+              bottom: 0,
+            }}>
+            <ITouchable
+              onPress={handleToggleFavorite}
+              style={{
+                ...tailwind(
+                  "bottom-5 right-5 absolute bg-garyDark justify-center items-center"
+                ),
+                borderRadius: 50,
+              }}>
+              <FavoriteIcon
+                color={
+                  !!favorites.find((item) => item._id === data?.result._id)
+                    ? "red"
+                    : "white"
+                }
+                size={40}
+              />
+            </ITouchable>
+          </LinearGradient>
+        </Container>
         <IText style={tailwind("text-center text-2xl mt-2 font-nunito-bold")}>
           {data?.result.titleOriginal}
         </IText>
@@ -105,3 +144,11 @@ const MovieDetails = () => {
 };
 
 export default MovieDetails;
+
+const styles = StyleSheet.create({
+  imageContianer: {
+    width: "100%",
+    height: Dimensions.get("window").height / 2,
+    borderRadius: 10,
+  },
+});

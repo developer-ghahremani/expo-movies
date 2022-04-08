@@ -7,7 +7,7 @@ interface Props {
 }
 
 const ProfileIcon = (props: Props) => {
-  return <AntDesign name="profile" {...props} />;
+  return <AntDesign name="user" {...props} />;
 };
 
 export default ProfileIcon;

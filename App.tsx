@@ -3,13 +3,14 @@ import "./src/i18";
 import * as Font from "expo-font";
 
 import React, { useEffect, useState } from "react";
+import store, { persistor } from "src/store";
 
 import { LogBox } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import Pages from "@pages/index";
+import { PersistGate } from "redux-persist/integration/react";
 import { Provider } from "react-redux";
 import { TailwindProvider } from "tailwind-rn";
-import store from "src/store";
 import utilities from "./tailwind.json";
 
 const App = () => {
@@ -33,11 +34,13 @@ const App = () => {
   if (!isFontloaded) return null;
   return (
     <Provider store={store}>
-      <TailwindProvider utilities={utilities}>
-        <NavigationContainer>
-          <Pages />
-        </NavigationContainer>
-      </TailwindProvider>
+      <PersistGate loading={null} persistor={persistor}>
+        <TailwindProvider utilities={utilities}>
+          <NavigationContainer>
+            <Pages />
+          </NavigationContainer>
+        </TailwindProvider>
+      </PersistGate>
     </Provider>
   );
 };
