@@ -10,5 +10,6 @@
   "description": "Description",
   "show": "Show {{option}}",
   "less": "Less",
-  "more": "More"
+  "more": "More",
+  "movieTrailers": "Movie trailers"
 }

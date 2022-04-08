@@ -1,5 +1,11 @@
+import {
+  FLUSH,
+  REGISTER,
+  REHYDRATE,
+  persistReducer,
+  persistStore,
+} from "redux-persist";
 import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
-import { persistReducer, persistStore } from "redux-persist";
 
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { combineReducers } from "redux";
@@ -13,7 +19,7 @@ const persistConfig = {
 };
 
 const persistedReducer = persistReducer(
-  persistConfig,
+  { ...persistConfig, blacklist: [service.reducerPath] },
   combineReducers({
     [service.reducerPath]: service.reducer,
     [favorites.name]: favorites.reducer,
@@ -23,7 +29,9 @@ const persistedReducer = persistReducer(
 const store = configureStore({
   reducer: persistedReducer,
   middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware().concat(service.middleware),
+    getDefaultMiddleware({
+      serializableCheck: { ignoreActions: [FLUSH, REGISTER, REHYDRATE] },
+    }).concat(service.middleware),
 });
 
 // Infer the `RootState` and `AppDispatch` types from the store itself

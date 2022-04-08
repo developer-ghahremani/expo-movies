@@ -7,6 +7,7 @@ import {
   ITouchable,
 } from "@components/general";
 import { Dimensions, StyleSheet } from "react-native";
+import { MovieTrailer, RatingBar } from "@components";
 import React, { useState } from "react";
 import { useAppDispatch, useAppSelector } from "src/store";
 import { useNavigation, useRoute } from "@react-navigation/native";
@@ -16,7 +17,6 @@ import { GenreItem } from "@components/items";
 import IBack from "@components/icons/IBack";
 import { LinearGradient } from "expo-linear-gradient";
 import { MainLayout } from "@components/layout";
-import RatingBar from "@components/RatingBar";
 import { colors } from "@constants";
 import { toggleFavorite } from "src/store/favorites";
 import { useGetMovieDetailQuery } from "src/store/service";
@@ -138,6 +138,7 @@ const MovieDetails = () => {
             </IText>
           </ITouchable>
         </Container>
+        <MovieTrailer movieId={movieId || ""} />
       </IScrollable>
     </MainLayout>
   );

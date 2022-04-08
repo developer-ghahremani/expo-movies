@@ -1,14 +1,13 @@
-import { ApiResponse, Movie } from "@models";
+import { ApiResponse, Movie, MovieTrailer } from "@models";
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
-import { RootState } from "./index";
 import { baseURL } from "@constants";
 
 const service = createApi({
   reducerPath: "serviceAPI",
   baseQuery: fetchBaseQuery({
     baseUrl: baseURL,
-    prepareHeaders: (headers, { getState }) => {
+    prepareHeaders: (headers) => {
       headers.set("X-RapidAPI-Host", `movies-app1.p.rapidapi.com`);
       headers.set(
         "X-RapidAPI-Key",
@@ -22,8 +21,14 @@ const service = createApi({
     getMovieDetail: build.query<ApiResponse<null, Movie>, { id: string }>({
       query: ({ id }) => ({ url: `/movie/${id}` }),
     }),
+    getMovieTrailers: build.query<
+      ApiResponse<null, MovieTrailer[]>,
+      { movieId: string }
+    >({
+      query: ({ movieId }) => ({ url: `/trailers/${movieId}` }),
+    }),
   }),
 });
 
 export default service;
-export const { useGetMovieDetailQuery } = service;
+export const { useGetMovieDetailQuery, useGetMovieTrailersQuery } = service;
