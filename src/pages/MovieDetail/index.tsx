@@ -33,10 +33,9 @@ const MovieDetails = () => {
   const dispatch = useAppDispatch();
   const favorites = useAppSelector((s) => s.favorites);
 
-  const { data, isFetching, isSuccess, isError, error } =
-    useGetMovieDetailQuery({
-      id: movieId || "",
-    });
+  const { data, isFetching } = useGetMovieDetailQuery({
+    id: movieId || "",
+  });
 
   const toggleDescription = () => {
     setShowMoreDesc((s) => !s);
@@ -121,6 +120,7 @@ const MovieDetails = () => {
             <GenreItem genre={item} key={item.uuid} />
           ))}
         </Container>
+
         <Container style={tailwind("mt-2")}>
           <IText style={tailwind("font-nunito-bold text-lg")}>
             {t("general.description")}
@@ -138,6 +138,7 @@ const MovieDetails = () => {
             </IText>
           </ITouchable>
         </Container>
+
         <MovieTrailer movieId={movieId || ""} />
       </IScrollable>
     </MainLayout>

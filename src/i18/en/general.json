@@ -11,5 +11,6 @@
   "show": "Show {{option}}",
   "less": "Less",
   "more": "More",
-  "movieTrailers": "Movie trailers"
+  "movieTrailers": "Movie trailers",
+  "duration": "duration : {{duration}}"
 }
