@@ -9,6 +9,7 @@ interface Props extends TextProps {
 
 const IText = ({ children, bold, style, ...prp }: Props) => {
   const tailwind = useTailwind();
+
   return (
     <Text
       style={[

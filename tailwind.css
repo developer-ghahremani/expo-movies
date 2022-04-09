@@ -46,11 +46,6 @@
   margin-bottom: 1rem
 }
 
-.mx-2 {
-  margin-left: 0.5rem;
-  margin-right: 0.5rem
-}
-
 .mx-1 {
   margin-left: 0.25rem;
   margin-right: 0.25rem
@@ -59,6 +54,11 @@
 .my-3 {
   margin-top: 0.75rem;
   margin-bottom: 0.75rem
+}
+
+.mx-2 {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem
 }
 
 .my-1 {
@@ -206,6 +206,11 @@
   background-color: rgb(0 0 0 / var(--tw-bg-opacity))
 }
 
+.bg-grayDark {
+  --tw-bg-opacity: 1;
+  background-color: rgb(27 26 31 / var(--tw-bg-opacity))
+}
+
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity))
@@ -214,11 +219,6 @@
 .bg-dark {
   --tw-bg-opacity: 1;
   background-color: rgb(12 12 12 / var(--tw-bg-opacity))
-}
-
-.bg-grayDark {
-  --tw-bg-opacity: 1;
-  background-color: rgb(27 26 31 / var(--tw-bg-opacity))
 }
 
 .bg-opacity-10 {
@@ -237,16 +237,16 @@
   padding: 0.5rem
 }
 
-.p-5 {
-  padding: 1.25rem
+.p-3 {
+  padding: 0.75rem
 }
 
 .p-4 {
   padding: 1rem
 }
 
-.p-3 {
-  padding: 0.75rem
+.p-5 {
+  padding: 1.25rem
 }
 
 .px-4 {
@@ -285,23 +285,31 @@
 }
 
 .text-lg {
-  font-size: 1.125rem;
-  line-height: 1.75rem
+  font-size: 18px
 }
 
 .text-sm {
-  font-size: 0.875rem;
-  line-height: 1.25rem
+  font-size: 12px
 }
 
 .text-2xl {
-  font-size: 1.5rem;
-  line-height: 2rem
+  font-size: 22px
 }
 
 .text-base {
-  font-size: 1rem;
-  line-height: 1.5rem
+  font-size: 14px
+}
+
+.text-xs {
+  font-size: 10px
+}
+
+.text-md {
+  font-size: 16px
+}
+
+.text-xl {
+  font-size: 20px
 }
 
 .text-gray-300 {

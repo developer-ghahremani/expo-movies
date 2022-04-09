@@ -15,5 +15,7 @@
   "duration": "Duration : {{duration}}",
   "movies": "Movies",
   "genres": "Genres",
-  "years": "Years"
+  "years": "Years",
+  "myEmail": "Email : developer.ghahremani@gmail.com",
+  "techAndLibs": "Technolody and Libraries"
 }

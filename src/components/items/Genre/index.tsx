@@ -9,9 +9,15 @@ type Props = {
   genre: Genre;
   isSelected?: boolean;
   onPress?: (genre: Genre) => void;
+  fontSize?: "base" | "sm" | "xs";
 };
 
-const GenreItem = ({ genre, isSelected, onPress }: Props) => {
+const GenreItem = ({
+  genre,
+  isSelected,
+  onPress,
+  fontSize = "base",
+}: Props) => {
   const tailwind = useTailwind();
 
   const handlePress = () => {
@@ -25,7 +31,17 @@ const GenreItem = ({ genre, isSelected, onPress }: Props) => {
           tailwind("m-2 rounded-lg items-center text-center py-2 px-4"),
           tailwind(isSelected ? "bg-red" : "bg-grayDark"),
         ]}>
-        <IText numberOfLines={1}>{genre.name}</IText>
+        <IText
+          style={tailwind(
+            fontSize === "xs"
+              ? `text-xs`
+              : fontSize === "sm"
+              ? "text-sm"
+              : "text-base"
+          )}
+          numberOfLines={1}>
+          {genre.name}
+        </IText>
       </Container>
     </ITouchable>
   );

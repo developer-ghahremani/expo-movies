@@ -61,12 +61,6 @@
 			"marginBottom": 16
 		}
 	},
-	"mx-2": {
-		"style": {
-			"marginLeft": 8,
-			"marginRight": 8
-		}
-	},
 	"mx-1": {
 		"style": {
 			"marginLeft": 4,
@@ -77,6 +71,12 @@
 		"style": {
 			"marginTop": 12,
 			"marginBottom": 12
+		}
+	},
+	"mx-2": {
+		"style": {
+			"marginLeft": 8,
+			"marginRight": 8
 		}
 	},
 	"my-1": {
@@ -270,6 +270,12 @@
 			"backgroundColor": "rgb(0 0 0 / var(--tw-bg-opacity))"
 		}
 	},
+	"bg-grayDark": {
+		"style": {
+			"--tw-bg-opacity": 1,
+			"backgroundColor": "rgb(27 26 31 / var(--tw-bg-opacity))"
+		}
+	},
 	"bg-white": {
 		"style": {
 			"--tw-bg-opacity": 1,
@@ -280,12 +286,6 @@
 		"style": {
 			"--tw-bg-opacity": 1,
 			"backgroundColor": "rgb(12 12 12 / var(--tw-bg-opacity))"
-		}
-	},
-	"bg-grayDark": {
-		"style": {
-			"--tw-bg-opacity": 1,
-			"backgroundColor": "rgb(27 26 31 / var(--tw-bg-opacity))"
 		}
 	},
 	"bg-opacity-10": {
@@ -311,12 +311,12 @@
 			"paddingLeft": 8
 		}
 	},
-	"p-5": {
+	"p-3": {
 		"style": {
-			"paddingTop": 20,
-			"paddingRight": 20,
-			"paddingBottom": 20,
-			"paddingLeft": 20
+			"paddingTop": 12,
+			"paddingRight": 12,
+			"paddingBottom": 12,
+			"paddingLeft": 12
 		}
 	},
 	"p-4": {
@@ -327,12 +327,12 @@
 			"paddingLeft": 16
 		}
 	},
-	"p-3": {
+	"p-5": {
 		"style": {
-			"paddingTop": 12,
-			"paddingRight": 12,
-			"paddingBottom": 12,
-			"paddingLeft": 12
+			"paddingTop": 20,
+			"paddingRight": 20,
+			"paddingBottom": 20,
+			"paddingLeft": 20
 		}
 	},
 	"px-4": {
@@ -380,26 +380,37 @@
 	},
 	"text-lg": {
 		"style": {
-			"fontSize": 18,
-			"lineHeight": 28
+			"fontSize": 18
 		}
 	},
 	"text-sm": {
 		"style": {
-			"fontSize": 14,
-			"lineHeight": 20
+			"fontSize": 12
 		}
 	},
 	"text-2xl": {
 		"style": {
-			"fontSize": 24,
-			"lineHeight": 32
+			"fontSize": 22
 		}
 	},
 	"text-base": {
 		"style": {
-			"fontSize": 16,
-			"lineHeight": 24
+			"fontSize": 14
+		}
+	},
+	"text-xs": {
+		"style": {
+			"fontSize": 10
+		}
+	},
+	"text-md": {
+		"style": {
+			"fontSize": 16
+		}
+	},
+	"text-xl": {
+		"style": {
+			"fontSize": 20
 		}
 	},
 	"text-gray-300": {
