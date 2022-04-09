@@ -22,8 +22,8 @@ const GenreItem = ({ genre, isSelected, onPress }: Props) => {
     <ITouchable disabled={!onPress} onPress={handlePress}>
       <Container
         style={[
-          tailwind("mx-2 rounded-lg items-center text-center py-2 px-4"),
-          tailwind(isSelected ? "bg-red" : "bg-garyDark"),
+          tailwind("m-2 rounded-lg items-center text-center py-2 px-4"),
+          tailwind(isSelected ? "bg-red" : "bg-grayDark"),
         ]}>
         <IText numberOfLines={1}>{genre.name}</IText>
       </Container>

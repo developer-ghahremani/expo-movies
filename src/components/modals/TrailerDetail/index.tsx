@@ -35,7 +35,7 @@ const TrailerDetail = ({ trailer, ...props }: Props) => {
 
   return (
     <IModal {...props}>
-      <Container style={tailwind("p-5 rounded-lg bg-garyDark")}>
+      <Container style={tailwind("p-5 rounded-lg bg-grayDark")}>
         {/* ------------------- IMAGE CONTAINER ------------------  */}
         <ITouchable
           onPress={showTrailer}
@@ -46,7 +46,7 @@ const TrailerDetail = ({ trailer, ...props }: Props) => {
             resizeMode="cover"
           />
           <LinearGradient
-            colors={["#ffffff10", colors.garyDark]}
+            colors={["#ffffff10", colors.grayDark]}
             style={tailwind("h-72 rounded-lg w-full absolute")}
           />
           <Container

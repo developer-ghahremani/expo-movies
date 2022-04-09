@@ -45,3 +45,8 @@ export interface MovieTrailer {
   };
   embed: string;
 }
+
+export interface MovieYear {
+  name: string;
+  uuid: string;
+}

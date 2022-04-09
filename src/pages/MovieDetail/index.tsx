@@ -86,7 +86,7 @@ const MovieDetails = () => {
               onPress={handleToggleFavorite}
               style={{
                 ...tailwind(
-                  "bottom-5 right-5 absolute bg-garyDark justify-center items-center"
+                  "bottom-5 right-5 absolute bg-grayDark justify-center items-center p-3"
                 ),
                 borderRadius: 50,
               }}>
@@ -96,7 +96,7 @@ const MovieDetails = () => {
                     ? "red"
                     : "white"
                 }
-                size={40}
+                size={30}
               />
             </ITouchable>
           </LinearGradient>
@@ -116,7 +116,7 @@ const MovieDetails = () => {
         </Container>
 
         <Container style={tailwind("flex-row justify-center mt-3")}>
-          {data?.result.genres.map((item) => (
+          {data?.result.genres.slice(0, 3).map((item) => (
             <GenreItem genre={item} key={item.uuid} />
           ))}
         </Container>
